@@ -17,12 +17,13 @@ import type { Message, Config } from './types.js'
 
 // ── Config ──
 
-const API_KEY = process.env.ANTHROPIC_API_KEY
-const MODEL = process.env.CLAUDE_MODEL ?? 'claude-sonnet-4-20250514'
+const API_KEY = process.env.GEMINI_API_KEY ?? process.env.ANTHROPIC_API_KEY
+const MODEL = process.env.CLAUDE_MODEL ?? 'gemini-2.0-flash'
 const CWD = process.cwd()
 
 if (!API_KEY) {
-  console.error(chalk.red('Error: ANTHROPIC_API_KEY environment variable is required.'))
+  console.error(chalk.red('Error: API key required. Set one of:'))
+  console.error(chalk.dim('  export GEMINI_API_KEY="AIza..."'))
   console.error(chalk.dim('  export ANTHROPIC_API_KEY="sk-ant-..."'))
   process.exit(1)
 }
