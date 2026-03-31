@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": false,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true,
+    "baseUrl": ".",
+    "paths": {
+      "bun:bundle": ["./shims/bun-bundle.ts"],
+      "bun:*": ["./shims/bun-fallback.ts"]
+    },
+    "types": ["node"]
+  },
+  "include": ["src/**/*", "shims/**/*"],
+  "exclude": ["node_modules", "dist"]
+}
